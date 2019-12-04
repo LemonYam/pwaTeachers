@@ -1,20 +1,19 @@
 <template>
-    <div>
-        <div>In view Test</div>
-        <test />
-    </div>
+  <div>
+    <div>Hello Test</div>
+    <UserCommnet />
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import test from '@/components/Test/Test.vue';
+
+const UserCommnet = () => import('../components/UserComment/UserComment.vue');
 
 @Component({
-    components: {
-        test,
-    },
+  components: {
+    UserCommnet,
+  },
 })
-export default class Test extends Vue {
-
-}
+export default class Test extends Vue {}
 </script>

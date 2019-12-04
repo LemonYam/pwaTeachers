@@ -2,8 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 
-const HomePage = () => import('../views/HomePage/HomePage.vue');
-const Test = () => import('../views/Test.vue');
+const HomePage = () => import('../views/HomePage/HomePage.vue');  // main page
+const videoPage = () => import('../views/VideoPage/VideoPage.vue');  // the page to watch video
+const Test = () => import('../views/Test.vue');  // test page
 
 Vue.use(VueRouter);
 
@@ -17,6 +18,11 @@ const routes = [
     path: '/',
     name: 'homePage',
     component: HomePage,
+  },
+  {
+    path: '/videoPage',
+    name: 'videoPage',
+    component: videoPage,
   },
   {
     path: '/about',

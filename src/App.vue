@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <router-link to="/">HomePage</router-link> |
     <router-link to="/home">Home</router-link> |
-    <router-link to="/test">Test</router-link> -->
+    <router-link to="/test">Test</router-link>-->
     <router-view />
   </div>
 </template>
@@ -36,7 +36,7 @@ body {
   height: 100vh;
   width: 100vw;
 
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 
 #top-box {
