@@ -1,18 +1,18 @@
 <template>
   <div>
     <div>Hello Test</div>
-    <UserCommnet />
+    <ScrollImgs />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-const UserCommnet = () => import('../components/UserComment/UserComment.vue');
+const ScrollImgs = () => import('@/components/ScrollImgs/ScrollImgs.vue');
 
 @Component({
   components: {
-    UserCommnet,
+    ScrollImgs,
   },
 })
 export default class Test extends Vue {}

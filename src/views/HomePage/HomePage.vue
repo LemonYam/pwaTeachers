@@ -2,6 +2,7 @@
   <div id="top-box">
     <Header />
     <div id="mid-box">
+      <!-- <ScrollImgs :imgs="imgs" /> -->
       <ActiveList :imgs="imgs" />
     </div>
     <BottomText text="华南师范大学" />

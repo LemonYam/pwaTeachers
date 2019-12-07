@@ -2,7 +2,6 @@
   <div id="top-box">
     <video
       src="http://w.gdou.com/livevod/news/06.mp4"
-      show-mute-btn
       webkit-playsinline
       controls
       class="vid"
@@ -20,6 +19,7 @@
   width: 100%;
   display: block;
   margin: auto;
+  background-color: blue;
 }
 
 /* the video's title */

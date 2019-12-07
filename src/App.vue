@@ -31,7 +31,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 
   height: 100vh;
   width: 100vw;
@@ -44,5 +43,11 @@ body {
   height: 100%;
   position: relative;
   /* background-color: aqua; */
+}
+
+#top-scroll {
+  width: 100%;
+  height: 94vh;
+  overflow-y: scroll;
 }
 </style>

@@ -2,5 +2,6 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class ScrollImgs extends Vue {
-    @Prop() private msg!: string;
+    // the scroll imgs, inclding some text, img's url and the destination's url
+    @Prop() private imgs!: string;
 }

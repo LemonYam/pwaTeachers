@@ -14,23 +14,24 @@ const BottomText = () => import('../../components/BottomText/BottomText.vue');
   },
 })
 export default class HomePage extends Vue {
-  @Prop() private msg!: string;
-
   private imgs: object[] = [
     {
       url: '/img/blue.jpg',
       text: '教育部部长陈宝生考察华南师大网络教育学院创新成果实录',
-      destUrl: '/videoPage',
+      destUrl: '/coursesPage',
+      date: '2019.11.28',
     },
     {
       url: '/img/blue.jpg',
       text: '教育部部长陈宝生考察华南师大网络教育学院创新成果实录',
-      destUrl: '/about',
+      destUrl: '/test',
+      date: '2019.12.11',
     },
     {
       url: '/img/blue.jpg',
       text: '教育部部长陈宝生考察华南师大网络教育学院创新成果实录',
       destUrl: '/home',
+      date: '2019.12.31',
     },
   ];
 }

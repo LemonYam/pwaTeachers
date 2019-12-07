@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 
 const HomePage = () => import('../views/HomePage/HomePage.vue');  // main page
+const CoursesPage = () => import('../views/CoursesPage/CoursesPage.vue');  // the courses list
 const videoPage = () => import('../views/VideoPage/VideoPage.vue');  // the page to watch video
 const Test = () => import('../views/Test.vue');  // test page
 
@@ -18,6 +19,11 @@ const routes = [
     path: '/',
     name: 'homePage',
     component: HomePage,
+  },
+  {
+    path: '/coursesPage',
+    name: 'coursesPage',
+    component: CoursesPage,
   },
   {
     path: '/videoPage',
