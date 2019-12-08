@@ -1,4 +1,4 @@
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 
 const Header = () => import('../../components/Header/Header.vue');
 const ScrollImgs = () => import('../../components/ScrollImgs/ScrollImgs.vue');
@@ -24,13 +24,13 @@ export default class HomePage extends Vue {
     {
       url: '/img/blue.jpg',
       text: '教育部部长陈宝生考察华南师大网络教育学院创新成果实录',
-      destUrl: '/test',
+      destUrl: '/cePage',
       date: '2019.12.11',
     },
     {
       url: '/img/blue.jpg',
       text: '教育部部长陈宝生考察华南师大网络教育学院创新成果实录',
-      destUrl: '/home',
+      destUrl: '/test',
       date: '2019.12.31',
     },
   ];

@@ -35,6 +35,7 @@
 
 /* QR code */
 .qr-code {
+  /* the final width is 50% and you don't have to assign the height */
   width: 150px;
   height: 150px;
 }
