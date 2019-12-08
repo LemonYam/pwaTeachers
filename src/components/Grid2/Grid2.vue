@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script lang="ts" src="./Grid.ts"></script>
+<script lang="ts" src="./Grid2.ts"></script>
 
 <style scoped>
 .grids {
@@ -21,7 +21,7 @@
 .grids-cell {
   position: relative;
   float: left;
-  /* width: 33%; */
+  /* width: 25%; */
   margin-bottom: 5px;
 }
 
@@ -36,10 +36,9 @@
   justify-content: center;
   align-items: center;
   width: 95%;
-  /* height: 50px; */
   text-align: center;
   margin-top: 5px;
-  font-size: 0;
+  font-size: 0px;
   /* background-color: aqua; */
 }
 

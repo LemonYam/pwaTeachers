@@ -18,7 +18,7 @@
       </div>
       <div>
         <div v-show="currentIndex==0">
-          <Grid :imgs="firstImgs" />
+          <Grid :imgs="firstImgs" width="33%" />
         </div>
         <div v-show="currentIndex==1">
           <ActiveList :imgs="secondImgs" flag="1" />

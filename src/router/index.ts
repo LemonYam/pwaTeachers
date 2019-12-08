@@ -5,12 +5,11 @@ import Home from '../views/Home.vue';
 // import the pages
 const HomePage = () => import('../views/HomePage/HomePage.vue');  // main page
 const CEPage = () => import('../views/CEPage/CEPage.vue');  // cloud education page
+const GradePage = () => import('../views/GradePage/GradePage.vue');  // contain all the grades courses
 const CoursesPage = () => import('../views/CoursesPage/CoursesPage.vue');  // the courses list
 const videoPage = () => import('../views/VideoPage/VideoPage.vue');  // the page to watch video
 const Test = () => import('../views/Test.vue');  // test page
 
-// import some components to make up the page
-const StaticImg = () => import('../components/StaticImg/StaticImg.vue');
 
 Vue.use(VueRouter);
 
@@ -24,6 +23,11 @@ const routes = [
     path: '/cePage',
     name: 'cePage',
     component: CEPage,
+  },
+  {
+    path: '/gradePage',
+    name: 'gradePage',
+    component: GradePage,
   },
   {
     path: '/coursesPage',
@@ -52,12 +56,6 @@ const routes = [
     path: '/test',
     name: 'test',
     component: Test,
-  },
-
-  {
-    path: './staticImg',
-    name: 'staticImg',
-    component: StaticImg,
   },
 ];
 

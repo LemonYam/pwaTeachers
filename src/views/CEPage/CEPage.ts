@@ -1,7 +1,7 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
 const StaticImg = () => import('../../components/StaticImg/StaticImg.vue');
-const Grid = () => import('../../components/grid/grid.vue');
+const Grid = () => import('../../components/Grid/Grid.vue');
 const ActiveList = () => import('../../components/ActiveList/ActiveList.vue');
 const Bottomtext = () => import('../../components/BottomText/BottomText.vue');
 
@@ -38,17 +38,17 @@ export default class CEPage extends Vue {
         {
             url: '/img/blue.jpg',
             text: '一年级',
-            destUrl: '../test',
+            destUrl: '/gradePage',
         },
         {
             url: '/img/blue.jpg',
             text: '二年级',
-            destUrl: '../test',
+            destUrl: '/gradePage',
         },
         {
             url: '/img/blue.jpg',
             text: '三年级',
-            destUrl: '../test',
+            destUrl: '/gradePage',
         },
         {
             url: '/img/blue.jpg',
