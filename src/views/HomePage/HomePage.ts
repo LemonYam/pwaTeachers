@@ -14,6 +14,12 @@ const BottomText = () => import('../../components/BottomText/BottomText.vue');
   },
 })
 export default class HomePage extends Vue {
+  private tabTitles: string[] = [
+    '直播专题',
+    '培训专题',
+  ];
+  private currentIndex: number = 0;   // identify the current tab
+
   private imgs: object[] = [
     {
       url: '/img/blue.jpg',
@@ -34,4 +40,14 @@ export default class HomePage extends Vue {
       date: '2019.12.31',
     },
   ];
+
+  // click the tab title to change its style
+  private click(e: any): void | boolean {
+    const current: number = e.currentTarget.id;   // 实际是一个 string
+    if (this.currentIndex === current) {
+      return false;
+    } else {
+      this.currentIndex = current;
+    }
+  }
 }
