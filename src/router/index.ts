@@ -7,6 +7,7 @@ const HomePage = () => import('../views/HomePage/HomePage.vue');  // main page
 const CEPage = () => import('../views/CEPage/CEPage.vue');  // cloud education page
 const GradePage = () => import('../views/GradePage/GradePage.vue');  // contain all the grades courses
 const CoursesPage = () => import('../views/CoursesPage/CoursesPage.vue');  // the courses list
+const LivePage = () => import('../views/LivePage/LivePage.vue');  // living course page
 const videoPage = () => import('../views/VideoPage/VideoPage.vue');  // the page to watch video
 const Test = () => import('../views/Test.vue');  // test page
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/coursesPage',
     name: 'coursesPage',
     component: CoursesPage,
+  },
+  {
+    path: '/livePage',
+    name: 'livePage',
+    component: LivePage,
   },
   {
     path: '/videoPage',

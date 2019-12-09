@@ -18,7 +18,7 @@ export default class HomePage extends Vue {
     {
       url: '/img/blue.jpg',
       text: '教育部部长陈宝生考察华南师大网络教育学院创新成果实录',
-      destUrl: '/coursesPage',
+      destUrl: '/livePage',
       date: '2019.11.28',
     },
     {
