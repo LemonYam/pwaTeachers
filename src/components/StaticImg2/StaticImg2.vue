@@ -18,6 +18,7 @@
 <script lang="ts" src="./StaticImg2.ts"></script>
 
 <style scoped>
+/* top img's comtainer */
 .container {
   background-color: #dfe7f7;
   padding: 1rem 0;
@@ -33,6 +34,7 @@
   box-shadow: none;
 }
 
+/* top img's link */
 .link {
   width: 90%;
   position: relative;
@@ -45,6 +47,7 @@
 .img {
   width: 100%;
 }
+
 .text-container {
   width: 100%;
   height: 40%;

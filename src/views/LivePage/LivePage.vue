@@ -8,7 +8,7 @@
       <ActiveList :imgs="imgs" flag="1" />
       <ActiveList :imgs="imgs" flag="1" />
     </div>
-    <BottomText text="华南师范大学" />
+    <BottomText text="华南师范大学" bgcolor="rgba(10, 10, 255, 0.8)" />
   </div>
 </template>
 
