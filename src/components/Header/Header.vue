@@ -1,6 +1,6 @@
 <template>
-  <div class="header">
-    <img alt="手机教师网" src="/img/head.png" />
+  <div class="header" :style="{backgroundColor: bgcolor}">
+    <img alt="手机教师网" :src="img" />
   </div>
 </template>
 
@@ -8,12 +8,12 @@
 
 <style scoped>
 .header {
-  width: 100vw;
   height: 7vh;
-  background-color: #2b8d00;
+  padding: 5px 0;
 }
 .header img {
   max-height: 100%;
+  max-width: 100%;
   margin: auto;
   display: block;
 }

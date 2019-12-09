@@ -20,7 +20,7 @@
 .list2 {
   padding: 5px;
   margin-bottom: 3px;
-  border-bottom: 5px solid #ddd;
+  border-bottom: 2px solid #ddd;
   /* box-shadow: 0 10rpx 2rpx rgba(193, 193, 193, 0.3); */
 }
 
