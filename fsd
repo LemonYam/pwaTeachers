@@ -1,0 +1,133 @@
+[1mdiff --git a/public/img/blue.jpg b/public/img/blue.jpg[m
+[1mindex 8af4977..5b26d05 100644[m
+Binary files a/public/img/blue.jpg and b/public/img/blue.jpg differ
+[1mdiff --git a/src/components/ScrollImgs/ScrollImgs.ts b/src/components/ScrollImgs/ScrollImgs.ts[m
+[1mindex 34cd550..1084656 100644[m
+[1m--- a/src/components/ScrollImgs/ScrollImgs.ts[m
+[1m+++ b/src/components/ScrollImgs/ScrollImgs.ts[m
+[36m@@ -4,4 +4,6 @@[m [mimport { Vue, Component, Prop } from 'vue-property-decorator';[m
+ export default class ScrollImgs extends Vue {[m
+     // the scroll imgs, inclding some text, img's url and the destination's url[m
+     @Prop({ default: [{}] }) private imgs!: object[];[m
+[32m+[m[32m    @Prop({ default: Array(1000) }) private init!: object[];[m
+[32m+[m
+ }[m
+[1mdiff --git a/src/components/ScrollImgs/ScrollImgs.vue b/src/components/ScrollImgs/ScrollImgs.vue[m
+[1mindex a0219a5..f607513 100644[m
+[1m--- a/src/components/ScrollImgs/ScrollImgs.vue[m
+[1m+++ b/src/components/ScrollImgs/ScrollImgs.vue[m
+[36m@@ -1,8 +1,15 @@[m
+ <template>[m
+   <div class="scroll-view">[m
+[31m-    <div v-for="(img, idx) in imgs" :key="idx" v-show="idx==0" class="scroll-item">[m
+[31m-      <router-link :to="img.destUrl" class="img-link">[m
+[31m-        <img :src="img.url" alt="图片加载失败啦 ?_?" class="imgs" />[m
+[32m+[m[32m    <!-- <div v-for="(x,key) in init"[m
+[32m+[m[32m         :key="key"> -->[m
+[32m+[m[32m    <div v-for="(img, idx) in imgs"[m
+[32m+[m[32m         :key="idx"[m
+[32m+[m[32m         class="scroll-item">[m
+[32m+[m[32m      <router-link :to="img.destUrl"[m
+[32m+[m[32m                   class="img-link">[m
+[32m+[m[32m        <img :src="img.url"[m
+[32m+[m[32m             alt="图片加载失败啦 ?_?"[m
+[32m+[m[32m             class="imgs" />[m
+         <div class="title-container">[m
+           <div class="live-title1">直播预告</div>[m
+           <div class="live-title2">[m
+[36m@@ -14,6 +21,25 @@[m
+         </div>[m
+       </router-link>[m
+     </div>[m
+[32m+[m[32m    <div class="scroll-item">[m
+[32m+[m[32m      <router-link :to="imgs[0].destUrl"[m
+[32m+[m[32m                   class="img-link1">[m
+[32m+[m[32m        <img :src="imgs[0].url"[m
+[32m+[m[32m             alt="图片加载失败啦 ?_?"[m
+[32m+[m[32m             class="imgs" />[m
+[32m+[m[32m        <div class="title-container">[m
+[32m+[m[32m          <div class="live-title1">直播预告</div>[m
+[32m+[m[32m          <div class="live-title2">[m
+[32m+[m[32m            <div>[m
+[32m+[m[32m              <span>{{imgs[0].text}}</span>[m
+[32m+[m[32m              <span>{{imgs[0].date}}</span>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m      </router-link>[m
+[32m+[m[32m    </div>[m
+[32m+[m
+[32m+[m[32m    <!-- </div> -->[m
+   </div>[m
+ </template>[m
+ [m
+[36m@@ -25,15 +51,29 @@[m
+   display: flex;[m
+   justify-content: center;[m
+   align-items: center;[m
+[32m+[m[32m  position: relative;[m
+[32m+[m[32m  animation: mymove2 5s infinite;[m
+[32m+[m[32m}[m
+[32m+[m[32m@keyframes mymove2 {[m
+[32m+[m[32m  0% {[m
+[32m+[m[32m    left: 150%;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  30% {[m
+[32m+[m[32m    left: 50%;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  60%{[m
+[32m+[m[32m    left: -50%;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  100% {[m
+[32m+[m[32m    left: -155%;[m
+[32m+[m[32m  }[m
+ }[m
+[31m-[m
+ .scroll-item {[m
+[31m-  width: 70vw;[m
+[32m+[m[32m  width: 100vw;[m
+   min-height: 100px;[m
+   border: white inset 1vw;[m
+   border-radius: 10px;[m
+   box-shadow: 0 0 1vw black;[m
+[31m-[m
+   background-color: rgb(216, 217, 218);[m
+ }[m
+ [m
+[36m@@ -44,7 +84,7 @@[m
+ }[m
+ [m
+ .imgs {[m
+[31m-  width: 100%;[m
+[32m+[m[32m  width: 100vw;[m
+   height: 100%;[m
+   /* border: white solid 5px; */[m
+   border-radius: 10px;[m
+[36m@@ -70,7 +110,6 @@[m
+   color: #c9250c;[m
+   font-size: 1.1em;[m
+   font-weight: bolder;[m
+[31m-[m
+   /* background-color: aqua; */[m
+ }[m
+ [m
+[1mdiff --git a/src/views/HomePage/HomePage.ts b/src/views/HomePage/HomePage.ts[m
+[1mindex e88dfef..40fb43e 100644[m
+[1m--- a/src/views/HomePage/HomePage.ts[m
+[1m+++ b/src/views/HomePage/HomePage.ts[m
+[36m@@ -28,13 +28,13 @@[m [mexport default class HomePage extends Vue {[m
+       date: '2019.11.28',[m
+     },[m
+     {[m
+[31m-      url: '/img/blue.jpg',[m
+[32m+[m[32m      url: '/img/blue2.jpg',[m
+       text: '教育部部长陈宝生考察华南师大网络教育学院创新成果实录',[m
+       destUrl: '/cePage',[m
+       date: '2019.12.11',[m
+     },[m
+     {[m
+[31m-      url: '/img/blue.jpg',[m
+[32m+[m[32m      url: '/img/blue3.jpg',[m
+       text: '教育部部长陈宝生考察华南师大网络教育学院创新成果实录',[m
+       destUrl: '/test',[m
+       date: '2019.12.31',[m
