@@ -28,13 +28,13 @@ export default class HomePage extends Vue {
       date: '2019.11.28',
     },
     {
-      url: '/img/blue.jpg',
+      url: '/img/blue2.jpg',
       text: '教育部部长陈宝生考察华南师大网络教育学院创新成果实录',
       destUrl: '/cePage',
       date: '2019.12.11',
     },
     {
-      url: '/img/blue.jpg',
+      url: '/img/blue3.jpg',
       text: '教育部部长陈宝生考察华南师大网络教育学院创新成果实录',
       destUrl: '/test',
       date: '2019.12.31',

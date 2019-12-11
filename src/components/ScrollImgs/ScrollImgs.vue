@@ -1,8 +1,15 @@
 <template>
   <div class="scroll-view">
-    <div v-for="(img, idx) in imgs" :key="idx" v-show="idx==0" class="scroll-item">
-      <router-link :to="img.destUrl" class="img-link">
-        <img :src="img.url" alt="图片加载失败啦 ?_?" class="imgs" />
+    <!-- <div v-for="(x,key) in init"
+         :key="key"> -->
+    <div v-for="(img, idx) in imgs"
+         :key="idx"
+         class="scroll-item">
+      <router-link :to="img.destUrl"
+                   class="img-link">
+        <img :src="img.url"
+             alt="图片加载失败啦 ?_?"
+             class="imgs" />
         <div class="title-container">
           <div class="live-title1">直播预告</div>
           <div class="live-title2">
@@ -14,6 +21,25 @@
         </div>
       </router-link>
     </div>
+    <div class="scroll-item">
+      <router-link :to="imgs[0].destUrl"
+                   class="img-link1">
+        <img :src="imgs[0].url"
+             alt="图片加载失败啦 ?_?"
+             class="imgs" />
+        <div class="title-container">
+          <div class="live-title1">直播预告</div>
+          <div class="live-title2">
+            <div>
+              <span>{{imgs[0].text}}</span>
+              <span>{{imgs[0].date}}</span>
+            </div>
+          </div>
+        </div>
+      </router-link>
+    </div>
+
+    <!-- </div> -->
   </div>
 </template>
 
@@ -25,15 +51,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  animation: mymove2 5s infinite;
 }
-
+@keyframes mymove2 {
+  0% {
+    left: 150%;
+  }
+  30% {
+    left: 50%;
+  }
+  60%{
+    left: -50%;
+  }
+  100% {
+    left: -155%;
+  }
+}
 .scroll-item {
-  width: 70vw;
+  width: 100vw;
   min-height: 100px;
   border: white inset 1vw;
   border-radius: 10px;
   box-shadow: 0 0 1vw black;
-
   background-color: rgb(216, 217, 218);
 }
 
@@ -44,7 +84,7 @@
 }
 
 .imgs {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   /* border: white solid 5px; */
   border-radius: 10px;
@@ -70,7 +110,6 @@
   color: #c9250c;
   font-size: 1.1em;
   font-weight: bolder;
-
   /* background-color: aqua; */
 }
 
