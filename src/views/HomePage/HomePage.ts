@@ -1,9 +1,9 @@
 import { Vue, Component } from 'vue-property-decorator';
 
-const Header = () => import('../../components/Header/Header.vue');
-const ScrollImgs = () => import('../../components/ScrollImgs/ScrollImgs.vue');
-const ActiveList = () => import('../../components/ActiveList/ActiveList.vue');
-const BottomText = () => import('../../components/BottomText/BottomText.vue');
+const Header = () => import('@/components/Header/Header.vue');
+const ScrollImgs = () => import('@/components/ScrollImgs/ScrollImgs.vue');
+const ActiveList = () => import('@/components/ActiveList/ActiveList.vue');
+const BottomText = () => import('@/components/BottomText/BottomText.vue');
 
 @Component({
   components: {

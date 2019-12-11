@@ -21,7 +21,10 @@
     "@vue/cli-plugin-pwa": "^4.1.0",
     "@vue/cli-plugin-typescript": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
+    "install": "^0.13.0",
+    "npm": "^6.13.3",
     "typescript": "~3.5.3",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "workbox-webpack-plugin": "^4.3.1"
   }
 }

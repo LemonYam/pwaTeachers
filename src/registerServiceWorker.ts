@@ -2,7 +2,9 @@
 
 import { register } from 'register-service-worker';
 
-if (process.env.NODE_ENV === 'production') {
+// registerServiceWorker注册的service worker 只在生产环境中生效（process.env.NODE_ENV === 'production'），所以开发的时候，可以注释掉。
+if (process.env.NODE_ENV !== 'production') {
+  // ${process.env.BASE_URL}
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready() {
       console.log(
