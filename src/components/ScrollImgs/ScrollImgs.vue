@@ -46,6 +46,24 @@
 <script lang="ts" src="./ScrollImgs.ts"></script>
 
 <style scoped>
+.swiper-button-next{
+  background-image: url(/img/right.jpg);
+  background-size: 100%;
+  width: 15vw;
+  height: 15vh;
+  top: 25%;
+  margin: 2vw;
+}
+
+.swiper-button-prev{
+  background-image: url(/img/left.jpg);
+  background-size: 100%;
+  width:15vw;
+  height: 15vh;
+  top: 25%;
+  margin: 2vw;
+}
+
 /* .scroll-view {
   padding: 10px;
   display: flex;
@@ -87,9 +105,10 @@
 .imgs {
   width: 100vw;
   height: 100%;
-  border: white solid 5px;
-  border-radius: 10px;
+  /* border: white solid 5px;
+  border-radius: 10px; */
 } 
+
 
 .title-container {
   position: absolute;
