@@ -11,9 +11,10 @@ npm install
 ### Compiles and hot-reloads for development
 
 ```
+npm run serve
 // if you get something wrong, it may the component don't uppercase the first letter
 // try to convert grid to Grid where in /src/components/grid
-npm run serve
+// because github will ignore file name's case, it can be solve by run: 'git config core.ignorecase false'
 ```
 
 ### Compiles and minifies for production
@@ -40,7 +41,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 项目介绍
 
-> :smile: **vue3.7 + typescript3.6.2 + vue-router^3.1.3**
+> :smile: **vue3.7 + typescript3.6.2 + vue-router^3.1.3 + nodejs**
 
 **目录**
 
@@ -234,6 +235,74 @@ data:image/x-icon;base64,          base64编码的icon图片数据
 
 #### Vue 相关
 
-1.
+1. vue-router
+
+- **hash 模式:**
+
+  - hash 模式背后的原理是 onhashchange 事件,可以在 window 对象上监听这个事件
+  - 这里的 hash 就是指 url 尾巴后的 # 号以及后面的字符，这里的 # 和 css 里的 # 是一个意思。hash 也称作锚点，本身是用来做页面定位的，它可以使对应 id 的元素显示在可视区域内
+  - hash 发生变化的 url 都会被浏览器记录下来，从而你会发现浏览器的前进后退都可以用了，所以人们在 html5 的 history 出现前，基本都是使用 hash 来实现前端路由的
+  - hash 本来是拿来做页面定位的，如果拿来做路由的话，原来的锚点功能就不能用了
+  - hash 的传参是基于 url 的，如果要传递复杂的数据，会有体积的限制
+
+- **history 模式:**
+
+  - 如果不想要很丑的 hash，我们可以用路由的 history 模式 —— 引用自 vueRouter 文档
+  - hash 能兼容到 IE8， history 只能兼容到 IE10
+  - history 模式不仅可以在 url 里放参数，还可以将数据存放在一个特定的对象中
+  - history 模式改变 url 的方式会导致浏览器向服务器发送请求，这不是我们想看到的，我们需要在服务器端做处理：如果匹配不到任何静态资源，则应该始终返回同一个 html 页面
+
+- **history api 可以分为两大部分：切换和修改:**
+
+  - 切换历史状态包括 back(后退)、forward(前进)、go(跳转)
+
+  ```js
+  history.go(-2); //后退两次
+  history.go(2); //前进两次
+  history.back(); //后退
+  hsitory.forward(); //前进
+  ```
+
+  - 修改历史状态包括了 pushState, replaceState 两个方法，接收 3 个参数：stateObj, title, url
+
+  ```js
+  window.history.pushState(state, title, url);
+  // state：需要保存的数据，这个数据在触发 popstate 事件时，可以在 event.state 里获取
+  // title：标题，基本没用，一般传 null
+  // url：设定新的历史记录的 url。新的 url 与当前 url 的 origin 必须是一樣的，否则会抛出错误。url可以是绝对路径，也可以是相对路径。
+  //如 当前 url 是 https://www.baidu.com/a/，执行 history.pushState(null, null, './qq/')，则变成 https://www.baidu.com/a/qq/，
+  //执行history.pushState(null, null, '/qq/')，则变成 https://www.baidu.com/qq/
+  window.history.replaceState(state, title, url);
+  // 与 pushState 基本相同，但她是修改当前历史记录，而 pushState 是创建新的历史记录
+  window.addEventListener("popstate", function() {
+    // 监听浏览器前进后退事件，pushState 与 replaceState 方法不会触发
+  });
+  ```
+
+- **router-link:**
+
+  - &lt;router-link&gt; 组件支持用户在具有路由功能的应用中 (点击) 导航；通过 to 属性指定目标地址，默认渲染成带有正确链接的&lt;a&gt; 标签，可以通过配置 tag 属性生成别的标签
+  - &lt;router-link&gt; 比起写死的 &lt;a href="..."&gt; 会好一些，理由如下:
+    - 无论是 HTML5 history 模式还是 hash 模式，它的表现行为一致，所以，当你要切换路由模式，或者在 IE9 降级使用 hash 模式，无须作任何变动
+    - 在 HTML5 history 模式下，router-link 会守卫点击事件，让浏览器不再重新加载页面
+    - 当你在 HTML5 history 模式下使用 base 选项之后，所有的 to 属性都不需要写 (基路径) 了
+
+- **router-view:**
+  - &lt;router-view&gt; 组件是一个 functional 组件，渲染路径匹配到的视图组件。&lt;router-view&gt;渲染的组件还可以内嵌自己的&lt;router-view&gt;，根据嵌套路径，渲染嵌套组件
+  - 其他属性 (非 router-view 使用的属性) 都直接传给渲染的组件，很多时候，每个路由的数据都是包含在路由参数中
+    [Vue Router API](https://router.vuejs.org/zh/api/)
+
+2. 图片问题：
+
+- public：
+  - 任何放置在 public 文件夹的静态资源都会被简单的复制，而不经过 webpack，需要我们通过绝对路径来引用它们<br/>如：有一张图片路径/public/imgs/test.jpg，我们需要 /imgs/test.jpg 这样来写它的路径
+  - public 目录提供的是一个应急手段，当你通过绝对路径引用它时，留意应用将会部署到哪里。如果你的应用没有部署在域名的根部，那么你需要为你的 URL 配置 publicPath 前缀
+  - 什么时候使用 public 文件夹：
+    - 你需要在构建输出中指定一个文件的名字。
+    - 你有上千个图片，需要动态引用它们的路径。
+    - 有些库可能和 webpack 不兼容，这时你除了将其用一个独立的 标签引入没有别的选择
+- assets：
+  - 需要使用相对路径引入
+  - 动态路径应使用 require 引入<br/>如：一张图片路径 /src/assets/imgs/test.jpg，需要我们使用 const img = require(../assets/imgs/test.jpg)，假定引用该图片的文件的父目录与 assets 同级
 
 # pwa-teachers-test
