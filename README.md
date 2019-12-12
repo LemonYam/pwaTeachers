@@ -11,6 +11,8 @@ npm install
 ### Compiles and hot-reloads for development
 
 ```
+// if you get something wrong, it may the component don't uppercase the first letter
+// try to convert grid to Grid where in /src/components/grid
 npm run serve
 ```
 
@@ -38,7 +40,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 项目介绍
 
-> :smile: **vue3.7 + typescript3.6.2 + vue-router^3.1.3 + 骨架屏**
+> :smile: **vue3.7 + typescript3.6.2 + vue-router^3.1.3**
 
 **目录**
 
@@ -72,46 +74,48 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 #### PWA 相关
 
-1. PWA(Progressive web apps，渐进式 Web 应用)运用现代 Web API 和传统的渐进式增强策略来创建跨平台 Web 应用程序它并不是一个快捷方式，而能在系统中作为一个独立的 App 存在，用户可设置它的权限，清除它的缓存
+1. PWA(Progressive web apps，渐进式 Web 应用)：
+
+- 运用现代 **Web API** 和传统的渐进式增强策略来创建跨平台 Web 应用程序它并不是一个快捷方式，而*能在系统中作为一个独立的 App 存在*，用户可设置它的权限，清除它的缓存
 
 2. 主要特点：
 
-- 可靠：即使在网络不稳定甚至断网的环境下，也能瞬间加载并展现
-- 用户体验：快速响应，具有平滑的过渡动画及用户操作的反馈
-- 用户黏性：和 Native App 一样，可以被添加到桌面，能接受离线通知，具有沉浸式的用户体验
+- **可靠**：即使在网络不稳定甚至断网的环境下，也能瞬间加载并展现
+- **用户体验**：快速响应，具有平滑的过渡动画及用户操作的反馈
+- **用户黏性**：和 Native App 一样，可以被添加到桌面，能接受离线通知，具有沉浸式的用户体验
 
 3. 主要特性：
 
-- 渐进式：适用于所有浏览器，因为它是以渐进式增强作为宗旨开发的
-- 连接无关性：能够借助 Service Worker 在离线或者网络较差的情况下正常访问
-- 类原生应用：由于是在 App Shell 模型基础上开发，因此应具有 Native App 的交互，给用户 Native App 的体验
-- 持续更新：始终是最新的，无版本和更新问题
-- 安全：通过 HTTPS 协议提供服务，防止窥探，确保内容不被篡改
-- 可索引：manifest 文件和 Service Worker 可以让搜索引擎索引到，从而将其识别为『应用』
-- 黏性：通过推送离线通知等，可以让用户回流
-- 可安装：用户可以添加常用的 Web App 到桌面，免去到应用商店下载的麻烦
-- 可链接：通过链接即可分享内容，无需下载安装
+- **渐进式**：适用于所有浏览器，因为它是以渐进式增强作为宗旨开发的
+- **连接无关性**：能够借助 Service Worker 在离线或者网络较差的情况下正常访问
+- **类原生应用**：由于是在 App Shell 模型基础上开发，因此应具有 Native App 的交互，给用户 Native App 的体验
+- **持续更新**：始终是最新的，无版本和更新问题
+- **安全**：通过 HTTPS 协议提供服务，防止窥探，确保内容不被篡改
+- **可索引**：manifest 文件和 Service Worker 可以让搜索引擎索引到，从而将其识别为『应用』
+- **黏性**：通过推送离线通知等，可以让用户回流
+- **可安装**：用户可以添加常用的 Web App 到桌面，免去到应用商店下载的麻烦
+- **可链接**：通过链接即可分享内容，无需下载安装
 
 4. 最低要求：
 
-- 站点需要使用 HTTPS
-- 页面需要响应式，能够在平板和移动设备上都具有良好的浏览体验
-- 所有的 URL 在断网的情况下有内容展现，不会展现浏览器默认页面
-- 需要支持 Wep App Manifest，能被添加到桌面
-- 即使在 3G 网络下，页面加载要快，可交互时间要短
-- 在主流浏览器下都能正常展现
+- 站点需要使用 **HTTPS**
+- 页面需要**响应式**，能够在平板和移动设备上都具有良好的浏览体验
+- 所有的 URL 在**断网**的情况下有内容展现，不会展现浏览器默认页面
+- 需要支持 Wep App Manifest，能被**添加到桌面**
+- 即使在 3G 网络下，页面**加载要快**，可**交互时间要短**
+- 在主流浏览器下都能**正常展现**
 - 动画要流畅，有用户操作反馈
 - 每个页面都有独立的 URL
 
 5. 核心技术：
 
-- Web App Manifest：
+- **Web App Manifest**
 
   - 开发者可以定义用户添加到主屏的图标、应用名称等
   - 允许开发者配置隐藏浏览器多余的 UI（地址栏，导航栏等），让 PWA 具有和 Native App 一样的沉浸式体验
   - 体现在代码上主要是一个 JSON 文件：manifest.json，开发者可以在这个 JSON 文件中配置 PWA 的相关信息
 
-- Service Worker：在 PWA 中最重要的功能就是离线与缓存
+- **Service Worker：在 PWA 中最重要的功能就是离线与缓存**
 
   - 一个特殊的 worker 线程，独立于当前网页主线程，有自己的执行上下文
   - 一旦被安装，就永远存在，除非显示取消注册
@@ -123,13 +127,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   - 不能直接操作 DOM
   - 必须在 HTTPS 环境下才能工作
 
-- 离线通知：
+- **离线通知**
 
   - 离线通知是指在用户没有打开 PWA 站点的情况下，也能接受到服务器推送过来的通知并展现给用户
   - 包括了两部分，离线推送和展现通知，分别是 Web Push 和 Notification API
   - 浏览器在接受到对应的消息服务中心推送过来的离线消息时，会唤醒对应站点注册的 Service Worker，开发者可以在 Service Worker 文件中处理接受的请求，显示通知
 
-- App Shell 和骨架屏：
+- **App Shell 和骨架屏**
   - App Shell 是 PWA 强调的一个非常重要的设计理念，它能够缩短用户进入页面时的白屏时间，让用户一进入 PWA 就能快速看到 PWA 的整体框架
   - 骨架屏（App Skeleton），也是提升首屏体验的有效方式。原理是在真实内容渲染完成前，使用一些能够快速渲染的静态图片/样式/色块/部分真实内容进行占位，让用户对真实内容区域有心理预期
   - App Shell 和骨架屏相辅相成，App Shell 显示页面的外框部分，初始内容由骨架屏来填充，保证主体内容区域不留白
@@ -141,7 +145,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 6. Promise：
 
-- ES6 引入的一种异步编程的解决方案，通过 Promise 对象来提供统一的异步状态管理方法
+- ES6 引入的一种**异步编程**的解决方案，通过 Promise 对象来提供统一的异步状态管理方法
 - 一般在使用 Promise 对象的时候，首先需要对其进行实例化
 - 实例化的 Promise 对象为异步状态的管理容器，resolve()和 reject()是用于控制 promise 状态的方法
 - 在调用 resolve()和 reject()方法的时候可传入任意值，这个值会作为监听状态变更的回调函数的参数透传出去
@@ -150,7 +154,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 7. Data URL
 
-- 允许我们使用内联（inline-code）的方式在网页中包含数据，目的是将一些小的数据，直接嵌入到网页中，从而不用再从外部文件载入
+- 允许我们使用内联（inline-code）的方式在网页中包含数据，目的是将一些小的数据，**直接嵌入到网页中**，从而不用再从外部文件载入
 
 ```bash
 <!-- 传统引入图片方法 -->
@@ -186,6 +190,12 @@ data:image/jpeg;base64,          base64编码的jpeg图片数据
 data:image/x-icon;base64,          base64编码的icon图片数据
 ```
 
+- 制作 base64 的 Data URL：
+
+  - 使用二进制方式(rb)打开图片文件
+  - 用 Python 的 base64 库来给比特流图片进行编码
+  - 获取到 encoded data，把该数据添加头部（看 Data URL 的格式）
+
 - 适用场合：
 
   - 当访问外部资源很麻烦或受限时
@@ -206,20 +216,24 @@ data:image/x-icon;base64,          base64编码的icon图片数据
 
 9. 资源请求的拦截代理：
 
-- 资源请求的判断：
+- **资源请求的判断**
   - fetch 事件会拦截页面上所有的网络资源请求，但我们通常只对部分资源请求进行处理，其余的请求会继续走浏览器默认的资源请求流程
   - fetch 事件回调参数的 event.request 属性描述了当前被拦截的资源请求，可以通过它来进行判断分类。event.request 是 Request 对象的实例，包含了资源请求的 URL、请求模式、请求头等全部信息
   - 一般情况下，资源请求的判断可以通过对 event.request.url 进行匹配来实现
-- 资源请求的响应：
+- **资源请求的响应**
   - fetch 事件回调参数的方法 event.respondWith(r) 可以指定资源请求的响应结果
   - respondWith(r) 方法的参数 r 可以是一个 Response 对象实例，也可以是一个 Promise 对象，这个 Promise 对象在异步执行完成的时候同样需要 resolve 返回一个 Response 对象实例作为请求的响应结果
-- 异步资源请求响应：
+- **异步资源请求响应**
   - event.respondWith 方法与 install、activate 事件回调参数中的 event.waitUntil 类似，起到了扩展延长 fetch 事件生命周期的作用
   - 在 fetch 事件回调同步执行完毕之前如果没有调用 event.respondWith(r) 指定资源响应结果，那么就会进入浏览器默认的资源请求流程当中
-- 资源请求响应的错误处理：
+- **资源请求响应的错误处理**
   - 当使用了 event.respondWith 指定资源响应之后，无论是以同步还是异步的方式，最终都需要返回 Response 对象
   - 在调用 event.respondWith 的时候，需要主动捕获并处理错误、异常返回结果
-- 资源请求与响应操作的管理：
+- **资源请求与响应操作的管理**
   - 在 fetch 事件回调当中主要进行着资源请求匹配和响应结果返回的操作，可以把这个过程当做一个路由分发的问题，因此我们可以封装一个 Router 类来实现对路由的匹配规则和操作分发的统一管理
+
+#### Vue 相关
+
+1.
 
 # pwa-teachers-test
