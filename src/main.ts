@@ -5,7 +5,9 @@ import './registerServiceWorker';
 
 Vue.config.productionTip = false;
 
-new Vue({
+const app = new Vue({
   router,
   render: (h) => h(App),
-}).$mount('#app');
+});
+
+setTimeout(() => app.$mount('#app'), 0);
