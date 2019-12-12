@@ -41,7 +41,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 项目介绍
 
-> :smile: **vue3.7 + typescript3.6.2 + vue-router^3.1.3 + nodejs**
+> :smile: **vue3.7 + typescript3.6.2 + vue-router^3.1.3**
 
 **目录**
 
