@@ -1,29 +1,30 @@
 <template>
-  <div class="scroll-view">
+  <swiper class="scroll-view" :options="swiperOption">
     <!-- <div v-for="(x,key) in init"
          :key="key"> -->
-    <div v-for="(img, idx) in imgs"
-         :key="idx"
-         class="scroll-item">
-      <router-link :to="img.destUrl"
-                   class="img-link">
-        <img :src="img.url"
-             alt="图片加载失败啦 ?_?"
-             class="imgs" />
+    <swiper-slide v-for="(img, idx) in imgs" :key="idx" class="scroll-item">
+      <router-link :to="img.destUrl" class="img-link">
+        <img :src="img.url" alt="图片加载失败啦 ?_?" class="imgs" />
         <div class="title-container">
           <div class="live-title1">直播预告</div>
           <div class="live-title2">
             <div>
-              <span>{{img.text}}</span>
-              <span>{{img.date}}</span>
+              <span>{{ img.text }}</span>
+              <span>{{ img.date }}</span>
             </div>
           </div>
         </div>
       </router-link>
-    </div>
-    <div class="scroll-item">
+    </swiper-slide>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination" slot="pagination"></div>
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev" slot="button-prev"></div>
+    <div class="swiper-button-next" slot="button-next"></div>
+  </swiper>
+  <!-- <div class="scroll-item">
       <router-link :to="imgs[0].destUrl"
-                   class="img-link1">
+                   class="img-link">
         <img :src="imgs[0].url"
              alt="图片加载失败啦 ?_?"
              class="imgs" />
@@ -37,58 +38,58 @@
           </div>
         </div>
       </router-link>
-    </div>
+    </div> -->
 
-    <!-- </div> -->
-  </div>
+  <!-- </div> -->
 </template>
 
 <script lang="ts" src="./ScrollImgs.ts"></script>
 
 <style scoped>
-.scroll-view {
+/* .scroll-view {
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  animation: mymove2 5s infinite;
-}
-@keyframes mymove2 {
+  animation: mymove2 7s infinite;
+} */
+/* @keyframes mymove2 {
   0% {
     left: 150%;
   }
   30% {
-    left: 50%;
+    left: 55%;
   }
-  60%{
+  60% {
     left: -50%;
   }
   100% {
     left: -155%;
   }
-}
-.scroll-item {
-  width: 100vw;
+} */
+ /* .scroll-item {
+  width: 100vw; 
   min-height: 100px;
   border: white inset 1vw;
   border-radius: 10px;
   box-shadow: 0 0 1vw black;
   background-color: rgb(216, 217, 218);
-}
+} */
 
-.img-link {
+/* .img-link {
   position: relative;
-  height: 38vw;
-  /* background-color: blueviolet; */
-}
+  height: 38vh;
+  width: 100vw;
+  background-color: blueviolet;
+} */
 
 .imgs {
   width: 100vw;
   height: 100%;
-  /* border: white solid 5px; */
+  border: white solid 5px;
   border-radius: 10px;
-}
+} 
 
 .title-container {
   position: absolute;
